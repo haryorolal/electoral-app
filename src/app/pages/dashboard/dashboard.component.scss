@@ -29,27 +29,11 @@
         max-width: 15%;
                
         
-        &_sidenav{
-            position: fixed;            
+        &_sidenav{       
             display: flex;
             flex-flow: column wrap; 
             height: 100% !important;
-            
-            
-            /*&-same{
-                cursor: pointer;
-                max-width: 100%;
-                height: 40px;
-                padding: 10px;
-                border-radius: 2px;
-                                   
-                &:hover{
-                    background-color: $primary;
-                    color: white;
-                    margin-top: 5px;  
-                    cursor: pointer;
-                }        
-            }*/
+                        
         }
     }
 
@@ -69,6 +53,7 @@
             border: 1px solid $base-light;
             border-radius: 8px;
             padding: 10px;
+            margin-bottom: 10px;
         }
     }
 
