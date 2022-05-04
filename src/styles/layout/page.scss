@@ -55,6 +55,9 @@
 
 .app-default {
 
+    height: 100vh !important;
+    overflow-y: hidden;
+
     &_app-footer{    
         max-height: 200px;    
         width: 100%;
