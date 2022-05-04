@@ -1,0 +1,9 @@
+<div class="app-page">
+    <form [formGroup]="form" novalidate autocomplete="off"  (ngSubmit)="onSubmit()">
+        <app-form-field label="Party" [required]="true" [control]="form.controls.name">
+            <app-input formControlName="name"></app-input>
+        </app-form-field>
+    
+        <app-button class="app-a" type="submit">Save</app-button>
+    </form>
+</div>

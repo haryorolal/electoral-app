@@ -1,0 +1,17 @@
+@import "src/styles/color";
+
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+
+    &__image{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    /*&__user{
+
+    }*/
+}

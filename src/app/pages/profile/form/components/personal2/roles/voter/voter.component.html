@@ -1,0 +1,5 @@
+<form [formGroup]="form" novalidate autocomplete="off">
+    <app-form-field label="Enter Phone number" [required]="true" [control]="form.controls.phone" [patternError]="regexErrors.numbers">
+        <app-input formControlName="phone"></app-input>
+    </app-form-field>
+</form>

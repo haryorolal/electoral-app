@@ -1,0 +1,5 @@
+<form [formGroup]="form" novalidate autocomplete="off">
+    <app-form-field label="Enter code as Admin" [required]="true" [control]="form.controls.code">
+        <app-input formControlName="code"></app-input>
+    </app-form-field>
+</form>

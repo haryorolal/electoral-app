@@ -1,0 +1,21 @@
+@import "src/styles/color";
+
+.sidenav{           
+    display: flex;
+    flex-flow: column wrap;     
+    
+    &-same{
+        cursor: pointer;
+        max-width: 100%;
+        height: 40px;
+        padding: 10px;
+        border-radius: 2px;
+                           
+        &:hover{
+            background-color: $primary;
+            color: white;
+            margin-top: 5px;  
+            cursor: pointer;
+        }        
+    }
+}

@@ -1,0 +1,9 @@
+
+@import "src/styles/mixins";
+
+.election{
+    @include card;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}

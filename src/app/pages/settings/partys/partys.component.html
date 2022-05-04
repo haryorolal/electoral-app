@@ -1,0 +1,11 @@
+<div class="app-page">
+    <div class="app-page__header">
+        <h1>Party</h1>
+    </div>
+    <div class="app-page__content">
+        <app-party *ngFor="let party of party$ | async" [item]="party" [isEditable]="isEditable$ | async" (edit)="onEdit($event)" (delete)="onDelete($event)"></app-party>
+    </div>
+    <div class="app-page__footer" *ngIf="isEditable$ | async">
+        <app-button (click)="onAdd()">Add</app-button>
+    </div>
+</div>

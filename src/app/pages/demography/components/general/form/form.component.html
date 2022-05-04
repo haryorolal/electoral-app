@@ -1,0 +1,21 @@
+<div class="app-page">
+    <ng-container *ngIf="!isVoted">
+        <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+            <app-form-field label="Candidates" [required]="true" [control]="form.controls.id">
+                <app-radios formControlName="id" [controlItemInterface]="elections?.candidate.controlItemsInterface" ></app-radios>
+            </app-form-field>
+    
+            <div class="form__actions">
+                <app-button type="submit" >Vote</app-button>
+            </div>
+        </form>
+    </ng-container>
+
+    <ng-container *ngIf="isVoted">
+        <div>{{message}}</div>
+    </ng-container>
+</div>
+
+<!--<code>
+    {{form.value | json}}
+</code>-->

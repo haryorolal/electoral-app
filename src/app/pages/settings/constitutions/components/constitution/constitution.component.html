@@ -1,0 +1,9 @@
+<div class="constitution">
+    <div class="constitution__content">
+        {{item.name}}
+    </div>
+    <div class="constitution__actions" *ngIf="isEditable">
+        <app-button (click)="onEdit(item)">Edit</app-button>
+        <app-button (click)="onDelete(item.id)">Delete</app-button>
+    </div>
+</div>

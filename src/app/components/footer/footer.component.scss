@@ -1,0 +1,18 @@
+.app-footer{   
+    height: 100px;
+    position: fixed;
+
+    &__right {
+        width: 50%;          
+        background: url('../../../assets/images/vote_3-removebg.png') left, url('../../../assets/images/VectorShape.png');   
+        background-repeat: no-repeat;
+        background-size: contain;       
+    }
+
+    &__left {
+        width: 50%;       
+        background: url('../../../assets/images/Vector.png') right, url('../../../assets/images/vote-removebg.png');
+        background-repeat: no-repeat;  
+        background-size: contain; 
+    }
+}

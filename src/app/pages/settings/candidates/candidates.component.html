@@ -1,0 +1,11 @@
+<div class="app-page">
+    <div class="app-page__header">
+        <h1>Candidates</h1>
+    </div>
+    <div class="app-page__content">
+        <app-candidate *ngFor="let candidate of candidates$ | async" [item]="candidate" (edit)="onEdit($event)" (delete)="onDelete($event)" [isEditable]="isEditable$ | async"></app-candidate>
+    </div>
+    <div class="app-page__footer" *ngIf="isEditable$ | async">
+        <app-button (click)="onAdd()">Add</app-button>
+    </div>
+</div>

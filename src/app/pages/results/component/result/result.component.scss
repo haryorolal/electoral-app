@@ -1,0 +1,11 @@
+@import "src/styles/mixins";
+
+.results{
+
+    &__content{
+        @include card;
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

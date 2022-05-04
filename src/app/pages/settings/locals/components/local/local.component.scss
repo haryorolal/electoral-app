@@ -1,0 +1,8 @@
+@import "src/styles/mixins";
+
+.local{
+    @include card;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}

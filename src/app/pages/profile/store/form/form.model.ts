@@ -1,0 +1,1 @@
+export { ProfileFormInterface } from '../../form/form.component';

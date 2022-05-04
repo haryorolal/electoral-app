@@ -1,0 +1,11 @@
+<div class="app-page">
+    <form [formGroup]="form" novalidate autocomplete="off"  (ngSubmit)="onSubmit()">
+        <app-form-field label="Local Government" [required]="true" [control]="form.controls.name">
+            <app-input formControlName="name"></app-input>
+        </app-form-field>
+    
+        <div class="form__actions">
+            <app-button type="submit">Save</app-button>
+        </div>
+    </form>
+</div>
