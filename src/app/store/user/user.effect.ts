@@ -47,7 +47,7 @@ export class UserEffects {
                     this.afs.doc<UserInterface>(`users/${signInState.user.uid}`).valueChanges().pipe(
                         take(1),
                         tap(() => {
-                            this.router.navigate(['/'])
+                            this.router.navigate(['/dashboard'])
                         }),
                         map(user => new fromUserActions.SigninActionSuccess(signInState.user.uid, user || null))
                     )

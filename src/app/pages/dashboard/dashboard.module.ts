@@ -7,6 +7,8 @@ import { ProfileModule } from '../profile/profile.module';
 import { SettingsModule } from '../settings/settings.module';
 import { UserPhotoModule } from 'src/app/shared';
 import { SideNavComponent } from 'src/app/components/sidenav/sidenav.component';
+import { DemographyModule } from '../demography/demography.module';
+import { ReportsModule } from '../reports/reports.module';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { SideNavComponent } from 'src/app/components/sidenav/sidenav.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    DemographyModule,
+    //ReportsModule,
     SettingsModule,
     ProfileModule,
     UserPhotoModule

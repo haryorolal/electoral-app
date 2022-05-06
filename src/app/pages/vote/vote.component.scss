@@ -1,0 +1,17 @@
+.wrapper{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    &_action{
+        width: 100%;
+        cursor: pointer;
+        height: 100px;
+        margin: 40px;
+        background-color: white;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 30px;
+        padding: 30px;
+    }
+}

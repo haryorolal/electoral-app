@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DemographyRoutingModule } from './demography-routing.module';
 import { DemographyComponent } from './demography.component';
-import { GeneralModule } from './components/general/general.module';
+import { GubanitarianComponent } from './components/gubanitarian/gubanitarian.component';
 
 
 @NgModule({
   declarations: [
-    DemographyComponent
+    DemographyComponent,
+    GubanitarianComponent
   ],
   imports: [
-    CommonModule,
-    DemographyRoutingModule,
-    //GeneralModule  
+    CommonModule
   ]
 })
 export class DemographyModule { }

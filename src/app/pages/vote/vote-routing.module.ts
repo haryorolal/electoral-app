@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DemographyComponent } from './demography.component';
+import { VoteComponent } from './vote.component';
 
 const routes: Routes = [
-  {path: '', component: DemographyComponent, children: [
-    {path: 'general', loadChildren: () => import('./components/general/general.module').then(x => x.GeneralModule)},
+  {path: '', component: VoteComponent, children: [
+    {path: 'general', loadChildren: () => import('../vote/components/general/general.module').then(x => x.GeneralModule)},
     //{path: 'gubanitarian', loadChildren: () => import('./components/gubanitarian/gubanitarian.module').then(x => x.GubanitarianModule)}
   ]}
 ];
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DemographyRoutingModule { }
+export class VoteRoutingModule { }
