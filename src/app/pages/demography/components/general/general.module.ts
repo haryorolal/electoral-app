@@ -19,6 +19,7 @@ import { effects, reducers } from './store';
     FormModule,
     StoreModule.forFeature('GeneralElection', reducers),
     EffectsModule.forFeature(effects)
-  ]
+  ],
+  //exports: [GeneralComponent]
 })
 export class GeneralModule { }

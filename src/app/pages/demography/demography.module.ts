@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DemographyRoutingModule } from './demography-routing.module';
 import { DemographyComponent } from './demography.component';
+import { GeneralModule } from './components/general/general.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DemographyComponent } from './demography.component';
   ],
   imports: [
     CommonModule,
-    DemographyRoutingModule    
+    DemographyRoutingModule,
+    //GeneralModule  
   ]
 })
 export class DemographyModule { }

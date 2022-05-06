@@ -5,7 +5,7 @@ import { DemographyComponent } from './demography.component';
 const routes: Routes = [
   {path: '', component: DemographyComponent, children: [
     {path: 'general', loadChildren: () => import('./components/general/general.module').then(x => x.GeneralModule)},
-    {path: 'gubanitarian', loadChildren: () => import('./components/gubanitarian/gubanitarian.module').then(x => x.GubanitarianModule)}
+    //{path: 'gubanitarian', loadChildren: () => import('./components/gubanitarian/gubanitarian.module').then(x => x.GubanitarianModule)}
   ]}
 ];
 
