@@ -23,3 +23,15 @@
         opacity: 1;
     }
 }
+
+@media screen and (max-width: 540px) {
+    .app-auth{
+        &_left{
+            display: none;
+        }
+
+        &_right{
+            width: 100vw;
+        }
+    }
+}
