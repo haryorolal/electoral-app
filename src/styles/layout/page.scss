@@ -19,13 +19,10 @@
             background: rgba(129, 129, 129, 0.46);            
             width: 50%;
             padding: 40px;
-        }
-
-        
+        }        
 }
 
 .app-page {
-
     max-width: 900px;
     margin: 16px auto;
     background: $base-light;
@@ -35,11 +32,23 @@
 
     position: relative;
 
-    
-
     &__header {
         margin-bottom: 32px;
         text-align: center;
+    }
+
+    &__sidenav{
+        width: 15%;     
+        border-right: 1px solid $base-light;
+        background-color: $base-light; 
+        padding: 10px;
+    }
+
+    &__center{
+        border-radius: 8px;
+        width: 85%;
+        overflow-y: auto !important;
+        height: 100vh !important;
     }
 
     &__content {

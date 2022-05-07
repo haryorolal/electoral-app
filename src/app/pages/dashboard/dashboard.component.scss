@@ -1,48 +1,25 @@
 @import "src/styles/color";
 
-.navigation {
-    padding: 20px 0;
-}
-
-.app-a_active{
-    background-color: $primary;
-    color: white;
-}
-
 .app-page {
     margin: 0;
     padding: 0;
-    max-width: 100%;
+    max-width: 100% !important;
     height: 100% !important;
     max-height: 100% !important;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
-    background: $base-dark;
-    backdrop-filter: blur(4px);  
+    background: $base-dark; 
     
-    &__left{  
-        flex-grow: 1;      
-        border-right: 1px solid $base-light;
-        background-color: $base-light; 
-        padding: 10px;
-        max-width: 15%;
-               
-        
+    &__sidenav{     
+
         &_sidenav{       
             display: flex;
             flex-flow: column wrap; 
-            height: 100% !important;
-                        
+            height: 100% !important;                        
         }
     }
 
-    &__center{
-        border-radius: 8px;
-        flex-grow: 3;
-        max-width: 85%;
-        overflow-y: auto !important;
-        height: 100vh !important;
+    &__center{       
 
         &-top{
             border-radius: 8px;
@@ -57,4 +34,21 @@
         }
     }
 
+}
+
+@media screen and (max-width: 540px) {
+    .app-page{
+
+        &__sidenav{
+            width: 30%;
+
+            &_sidenav{
+                font-size: 10px;
+            }
+        }
+
+        &__center{
+            width: 70%;
+        }
+    }
 }
