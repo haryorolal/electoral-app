@@ -15,3 +15,12 @@
 
     }*/
 }
+
+@media screen and (max-width: 540px) {
+    .app-page {
+
+        &__content{
+            font-size: 12px;
+        }
+    }
+}
