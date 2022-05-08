@@ -10,8 +10,8 @@ export const environment = {
       appId: "1:425951522430:web:08372277c732b2f01b322f"
     },
     actionCodeSettings: {
-      //url: 'https://electoralapp.netlify.app/#/dashboard/profile/new',
-      url: 'http://localhost:4200/dashboard/profile/new',
+      url: 'https://electoralapp.netlify.app/#/dashboard/profile/new',
+      //url: 'http://localhost:4200/dashboard/profile/new',
       handleCodeInApp: true
     }
    }
