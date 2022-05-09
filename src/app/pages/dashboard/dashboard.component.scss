@@ -11,6 +11,8 @@
     background: $base-dark; 
     
     &__sidenav{     
+        background-color: $primary;
+        color: $base-light;
 
         &_sidenav{       
             display: flex;

@@ -1,5 +1,10 @@
 @import "src/styles/color";
 
+.app-a_active{
+    background-color: $primary-light;
+    color: $base-dark;
+}
+
 .sidenav{           
     display: flex;
     flex-flow: column wrap;     
@@ -12,8 +17,8 @@
         border-radius: 2px;
                            
         &:hover, &:focus{
-            background-color: $primary;
-            color: white;
+            background-color: $base-light;
+            color: $primary-dark;
             margin-top: 5px;  
             cursor: pointer;
         }        

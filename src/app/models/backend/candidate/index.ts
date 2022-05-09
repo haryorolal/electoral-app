@@ -7,7 +7,8 @@ export interface CandidateInterface{
     party: string;
     state: string;
     position: string;
-    photoUrl?: string;
+    photoUrl: string;
     createdAt: FieldValue;
-    count?: number;
+    updatedAt?: FieldValue;
+    count: number;
 }

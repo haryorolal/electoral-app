@@ -9,6 +9,7 @@ import { AutocompleteModule } from './autocomplete/autocomplete.module';
 import { CheckboxModule } from './checkbox/checkbox.module';
 import { DateRangeModule } from './date-range/date-range.module';
 import { DateModule } from './date/date.module';
+import { TableModule } from './table/table.module';
 
 
 
@@ -25,7 +26,8 @@ import { DateModule } from './date/date.module';
     RadiosModule,
     CheckboxModule,
     DateModule,
-    DateRangeModule
+    DateRangeModule,
+    TableModule
   ],
   exports: [
     InputModule,
@@ -36,7 +38,8 @@ import { DateModule } from './date/date.module';
     RadiosModule, 
     CheckboxModule,
     DateModule,
-    DateRangeModule
+    DateRangeModule,
+    TableModule
   ]
 })
 export class ControlsModule { }
