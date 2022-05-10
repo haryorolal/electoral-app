@@ -1,3 +1,149 @@
+@import "src/styles/color";
+
 .app-page{
-    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    height: 30vw;
+    background-color: $primary-light;
+    color: $base-light;
+
+    &__header{        
+        &_imgs{         
+            position: absolute;
+            right: 0;
+            bottom: -270px;
+            width: 400px;
+            height: 600px;               
+            background-image: url("../../../../assets/images/vo1.png");
+            background-repeat: no-repeat;  
+            background-size: contain;
+        }
+
+        &_banner{
+            width: 100%;
+            height: 50px;
+            background-color: #462B56;
+            position: absolute;
+            padding: 10px;
+            bottom: -20px;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+
+.main{
+    max-width: 100vw;
+    height: 50vh;
+    text-align: center;
+    background-color: #F2F0F0;
+
+    h1 {
+        font-size: 50px;
+        font-weight: 500;
+        color: #462B56;        
+    }
+
+    p{
+        font-size: 30px;
+        font-family: Roboto;
+        font-weight: 200;
+        line-height: 5px;
+    }
+
+    &_cont{
+        display: flex;
+        justify-content: space-evenly;
+
+        &_one{
+            background-color: #EB47F9;
+        }
+        &_two{
+            background-color: #B13FF4;
+        }
+        &_three{
+            background-color: #F43F4A;
+        }
+
+        &_same{
+            width: 250px;
+            height: 150px;
+            border: none;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px;
+            color: white;
+
+            span{
+                font-weight: 400;
+                font-family: Roboto;
+                font-size: 80px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 615px) {
+    .app-page{
+        margin: 0;
+        padding: 0;
+        height: 50vw;
+
+        h1, p{
+            font-size: 12px;
+        }
+
+        &__header{
+            margin: 0;
+            
+            &_imgs{         
+                bottom: -140px;
+                width: 150px;
+                height: 250px;         
+            }
+    
+            &_banner{
+                height: 15px;
+                bottom: -10px;
+                padding: 3px;
+                font-size: 8px;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    .main{
+        text-align: center;
+    
+        h1 {
+            font-size: 40px;
+            font-weight: 400;      
+        }
+    
+        p{
+            font-size: 20px;
+            line-height: 5px;
+        }
+
+        &_cont{
+    
+            &_same{
+                width: 80px;
+                height: 100px;
+                border: none;
+                border-radius: 10px;
+                text-align: center;
+                padding: 10px;
+                color: white;
+    
+                span{
+                    font-weight: 400;
+                    font-family: Roboto;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
 }

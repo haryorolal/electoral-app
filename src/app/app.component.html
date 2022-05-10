@@ -1,16 +1,14 @@
 
-
-<!--<app-footer></app-footer>-->
-
 <div class="app-default">
-    <app-header [isAuthorized]="isAuthorized$ | async" [user]="user$ | async" (signOut)="onsignOut()"></app-header>
-    <div class="">
-        <router-outlet></router-outlet>
+    <div class="app-default__header">
+        <app-header [isAuthorized]="isAuthorized$ | async" [user]="user$ | async" (signOut)="onsignOut()"></app-header>
     </div>
-    <!--<div class="app-default_app-footer">
-        <div class="app-footer__right">
-            <div class="app-footer__right_r"></div>
-        </div>
-        <div class="app-footer__left"></div>
-    </div>-->
+    <div class="app-default__content">
+        <router-outlet></router-outlet>
+    </div>  
+    <div class="app-default__footer">
+        <app-footer></app-footer>
+    </div>    
 </div>
+
+

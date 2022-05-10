@@ -63,35 +63,24 @@
 }
 
 .app-default {
-
-    height: 100vh !important;
+    //height: 100%;
     overflow-y: hidden;
+    margin: 0;
 
-    &_app-footer{    
-        max-height: 200px;    
-        width: 100%;
-    
-        display: flex;
-        justify-content: space-between;  
+    &__header{
+        margin: 0;
+        padding: 0;
+    }
 
-        height: 100px;
-         //position: fixed;
+    &__content{
+        margin: 0;
+        padding: 0;
+    }
 
-         &__right {
-            width: 50%;          
-            background: url('../../assets/images/vote_3-removebg.png') left, url('../../assets/images/VectorShape.png');   
-            background-repeat: no-repeat;
-            background-size: contain;       
-        }
-
-        &__left {
-            width: 50%;       
-            background: url('../../assets/images/Vector.png') right, url('../../assets/images/vote-removebg.png');
-            background-repeat: no-repeat;  
-            background-size: contain; 
-        }
-    
-        
-        
+    &__footer{    
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center;      
+          
     }
 }
