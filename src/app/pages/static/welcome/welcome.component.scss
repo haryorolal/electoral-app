@@ -1,32 +1,33 @@
 @import "src/styles/color";
 
-.app-page{
-    max-width: 100vw;
-    margin: 0;
-    padding: 0;
-    height: 30vw;
-    background-color: $primary-light;
-    color: $base-light;
-
-    &__header{        
-        &_imgs{         
+.app-land{
+    
+    &__header{   
+        
+        img{
             position: absolute;
             right: 0;
-            bottom: -270px;
+            bottom: 8px;
+            width: 300px;
+            height: 300px;
+        }
+        
+        &_imgs{        
+           background-color: red;
             width: 400px;
-            height: 600px;               
-            background-image: url("../../../../assets/images/vo1.png");
-            background-repeat: no-repeat;  
-            background-size: contain;
+            height: 600px;            
         }
 
         &_banner{
             width: 100%;
             height: 50px;
             background-color: #462B56;
+            color: white;
             position: absolute;
+            text-align: center;
+            margin: 0;
+            bottom: 0;
             padding: 10px;
-            bottom: -20px;
             border: none;
             border-radius: 5px;
         }
@@ -37,7 +38,7 @@
     max-width: 100vw;
     height: 50vh;
     text-align: center;
-    background-color: #F2F0F0;
+    padding-top: 10px;
 
     h1 {
         font-size: 50px;
@@ -67,7 +68,7 @@
         }
 
         &_same{
-            width: 250px;
+            width: 200px;
             height: 150px;
             border: none;
             border-radius: 20px;
@@ -78,18 +79,32 @@
             span{
                 font-weight: 400;
                 font-family: Roboto;
-                font-size: 80px;
+                font-size: 50px;
             }
         }
     }
 }
 
+.getStarted{
+    margin-top: 10px;    
+    height: 100px;
+
+    button{
+        width: 100px;
+        height: 50px;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: #FFCE14;
+        color: white;
+    }
+}
+
+
 
 @media screen and (max-width: 615px) {
-    .app-page{
+    .app-land{
         margin: 0;
         padding: 0;
-        height: 50vw;
 
         h1, p{
             font-size: 12px;
@@ -98,17 +113,17 @@
         &__header{
             margin: 0;
             
-            &_imgs{         
-                bottom: -140px;
-                width: 150px;
-                height: 250px;         
+            img{
+                width: 200px;
+                height: 200px;
             }
     
             &_banner{
-                height: 15px;
-                bottom: -10px;
-                padding: 3px;
-                font-size: 8px;
+                height: 20px;
+                bottom: 0;
+                margin: 0;
+                padding: 5px;
+                font-size: 10px;
                 border-radius: 2px;
             }
         }

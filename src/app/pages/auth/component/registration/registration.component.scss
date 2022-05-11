@@ -1,10 +1,11 @@
 @import "src/styles/color";
+
 .app-page {
-    max-width: 500px;
-    max-height: 450px;
+    width: 30%;
+    height: 70vh;
     background: #E5E5E5 ;
-    position: relative;
-    bottom: 30px;
+    opacity: 0.92;  
+    
 
     &__footer {
         position: relative;
@@ -25,13 +26,17 @@
 }
 
 @media screen and (max-width: 540px) {
-    .app-auth{
-        &_left{
-            display: none;
-        }
+    .app-page{
 
-        &_right{
-            width: 100vw;
-        }
+        width: 80vw;
+        margin: 30px;
+        height: 80vh;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 912px) {
+    .app-page{       
+        width: 50%;
+        height: 50vh;
     }
 }

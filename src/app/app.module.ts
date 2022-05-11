@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 
 import { environment } from 'src/environments/environment';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 //Date
 import { MatNativeDateModule, MatDateFormats, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
@@ -43,7 +42,6 @@ import { SideNavComponent } from './components/sidenav/sidenav.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     //SideNavComponent
   ],
   imports: [

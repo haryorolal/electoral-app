@@ -1,11 +1,12 @@
 
     <div class="app-auth">
-        <div class="app-auth_left"></div>
+        <!--<div class="app-auth_left"></div>-->
 
-        <div class="app-auth_right">
+        <!--<div class="app-auth_left">-->
             <div class="app-page">
                 <div class="app-page__header">
                     <h1>SignUp</h1>
+                    <p>Have an account? <a class="app-a" routerLink="/auth/login">Login</a></p>
                 </div>
                 
                 <form [formGroup]="form" (submit)="onSubmit()" (keyup.enter)="onSubmit()" novalidate autocomplete="off">
@@ -29,12 +30,12 @@
             
                     <div class="app-page__footer">
                         <app-button type="submit">Submit</app-button>
-                    </div>
-            
+                    </div>            
                 </form>
+                
             </div>
             
-        </div>
+        <!--</div>-->
         <app-spinner *ngIf="loading$ | async"></app-spinner>
     </div>
     
