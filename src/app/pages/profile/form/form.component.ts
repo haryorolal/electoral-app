@@ -71,7 +71,7 @@ export class FormComponent implements OnInit, OnDestroy {
 
     this.stepperService.init([    
       {key: 'personal', label: 'Personal'},
-      {key: 'personal2', label: 'Other Details'}      
+      {key: 'personal2', label: 'Role'}      
     ]);
 
     //we subscribe to final event in form component such as cancel and complete stepper

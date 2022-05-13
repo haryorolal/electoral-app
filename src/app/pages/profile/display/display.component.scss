@@ -1,26 +1,112 @@
 @import "src/styles/color";
 
-
-.wrapper{
+.app-page{
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    
+        &__image{
+            display: flex;
+            flex-direction: row;
+            
+            &_img{
+                padding: 20px;
+            }
 
-    &__image{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+            &_text{  
 
-    /*&__user{
+                &_name{
+                    
+                    font-size: 30px;
+                    font-weight: 500; 
+                }
 
-    }*/
+                p{
+                    line-height: 2px;
+                }
+            }   
+        }
+
+        .text-same{
+            color: #1a1919;
+        }
+    
+        &__content{
+             span{
+                 padding: 30px;
+                 color: #918b8b;
+             }
+        }
+
+        &__footer{
+            height: 40px;
+
+        }
 }
+
+@media screen and (min-width: 280px) {
+    
+        .text-same{
+            font-size: 10px;
+        }
+}
+
 
 @media screen and (max-width: 540px) {
     .app-page {
+        display: flex;
+        flex-direction: column;
+
+        &__image{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            &_img{
+                padding: 10px;
+            }
+
+            &_text{  
+
+                &_name{                    
+                    font-size: 15px;
+                    font-weight: 500; 
+                }
+
+            }   
+        }
+
+        .text-same{
+            line-break: 2px;
+            font-size: 12px;
+        }
 
         &__content{
             font-size: 12px;
+            line-height: 4px;
+
+            span{                
+                padding: 5px;
+            }
         }
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 912px) {
+    .app-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__image{
+            display: flex;
+            flex-direction: column;          
+            
+ 
+        }
+
+       
+
+
+        
     }
 }

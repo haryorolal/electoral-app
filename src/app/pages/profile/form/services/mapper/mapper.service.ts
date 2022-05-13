@@ -67,6 +67,7 @@ export class MapperService {
       about: form.personal.about,
       nin: form.personal.nin,
       roleId: form.personal2.roleId,
+      isCompleted: true,
       role: this.getRole(form, dictionaries)
     }
 
@@ -82,6 +83,7 @@ export class MapperService {
       country: form.personal.country,
       about: form.personal.about,
       nin: form.personal.nin, 
+      isCompleted: true,
       roleId: form.personal2.roleId,           
       role: this.getRole(form, dictionaries)
       //role: form.personal2.role

@@ -1,18 +1,9 @@
 <div class="header">
     <div class="header__title" routerLink="/">Electoral</div>
     <div class="header__navigation">
-
-        <!--<div *ngIf="!isAuthorized">
-            <a class="app-a" routerLink="auth/login" routerLinkActive="app-a_active">Log In</a>
-            <a class="app-a" routerLink="auth/registration" routerLinkActive="app-a_active">Registration</a>
-        </div>-->
-
         <div *ngIf="isAuthorized">
-            <a class="app-a" routerLink="dashboard">Dashboard</a>
             <a class="app-a" (click)="onProfileNavigate()">Profile</a>
             <a class="app-a" (click)="onSignout()">Sign Out</a>
-        </div>
-
-        
+        </div>        
     </div>
 </div>

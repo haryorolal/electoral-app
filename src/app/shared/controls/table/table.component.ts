@@ -1,7 +1,8 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ControlItemInterface, Value } from '../../../models/frontend';
-export { ControlItemInterface, Value } from '../../../models/frontend';
+import { MatTableDataSource } from '@angular/material/table';
+import { ControlItemInterface, ItemInterface, Value } from '../../../models/frontend';
+export { ControlItemInterface, ItemInterface, Value } from '../../../models/frontend';
 
 @Component({
   selector: 'app-table',
@@ -17,8 +18,9 @@ export { ControlItemInterface, Value } from '../../../models/frontend';
 })
 export class TableComponent implements OnInit, ControlValueAccessor {
 
-  @Input() dataSource: ControlItemInterface[];
-  displayedCoumns: string[] = ['#', 'Candidates', 'VoteCount']
+  @Input() public dataSource: MatTableDataSource<string[]>;
+  //public dataSources: MatTableDataSource<string[]>
+  displayedColumns: string[] = ['#', 'Photo', 'Name', 'Party', 'Position', 'VoteCount']
   @Output() changed = new EventEmitter<Value[]>();
 
   value: Value[]

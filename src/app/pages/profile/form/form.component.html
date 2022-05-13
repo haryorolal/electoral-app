@@ -6,7 +6,7 @@
         <app-stepper *ngIf="dictionariesIsReady$ | async"> 
             <ng-container [ngSwitch]="stepperService?.activeStep?.key">
                 <app-personal *ngSwitchCase="'personal'" [dictionaries]="dictionaries$ | async" (changed)="onChangedPersonal($event)" [value]="personal$  | async">Personal</app-personal>
-                <app-personal2 *ngSwitchCase="'personal2'" [dictionaries]="dictionaries$ | async" (changed)="onChangedPersonal2($event)" [value]="personal2$ | async">Other Details</app-personal2>
+                <app-personal2 *ngSwitchCase="'personal2'" [dictionaries]="dictionaries$ | async" (changed)="onChangedPersonal2($event)" [value]="personal2$ | async">Role</app-personal2>
             </ng-container>
         </app-stepper>
     </div>

@@ -1,9 +1,10 @@
-<div class="app-page">
-    <div class="app-page__sidenav">
-        <div class="app-page__sidenav_sidenav">
-            <app-sidenav></app-sidenav>            
-        </div> 
-    </div>
+<div class="app-page" >
+        <div class="app-page__sidenav" *ngIf="isProfileCompleted$ | async">
+            <div class="app-page__sidenav_sidenav">
+                <app-sidenav></app-sidenav>            
+            </div> 
+        </div>
+        
 
     <div class="app-page__center">        
         <div class="app-page__center-top">

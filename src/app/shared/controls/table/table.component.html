@@ -1,20 +1,38 @@
 <div class="table">
-    <div *ngFor="let item of dataSource">
-        <mat-table [dataSource]="item" matSort>
+    <!--<div *ngFor="let item of dataSources">-->
+        <mat-table [dataSource]="dataSource" matSort>
             <ng-container matColumnDef="#">
                 <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
                 <mat-cell *matCellDef="let element; let i = index" data-label="#">{{i+1}}</mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="Candidates">
-                <mat-header-cell *matHeaderCellDef>Candidates</mat-header-cell>
+            <ng-container matColumnDef="Photo">
+                <mat-header-cell *matHeaderCellDef>Photo</mat-header-cell>
+                <mat-cell *matCelDef="let element">{{element.photoUrl}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Name">
+                <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
                 <mat-cell *matCelDef="let element">{{element.name}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Party">
+                <mat-header-cell *matHeaderCellDef>Party</mat-header-cell>
+                <mat-cell *matCelDef="let element">{{element.party}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Position">
+                <mat-header-cell *matHeaderCellDef>Position</mat-header-cell>
+                <mat-cell *matCelDef="let element">{{element.position}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="VoteCount">
                 <mat-header-cell *matHeaderCellDef>Vote Count</mat-header-cell>
                 <mat-cell *mat-cell="let element">{{element.count}}</mat-cell>
             </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
-    </div>
+    <!--</div>-->
 </div>

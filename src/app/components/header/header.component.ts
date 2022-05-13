@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
+import { Observable } from "rxjs";
 import { UserInterface } from "../../store/user";
 
 @Component({
@@ -16,8 +17,7 @@ export class HeaderComponent implements OnInit {
 
     constructor(private router: Router) {}
 
-    ngOnInit(): void {
-        
+    ngOnInit(): void {        
     }
 
     onProfileNavigate(): void{

@@ -20,6 +20,7 @@ export class ResultsComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(new fromCandidate.Read())
     this.candidate$ = this.store.pipe(select(fromCandidate.selectAll))
+    
   }
 
 }

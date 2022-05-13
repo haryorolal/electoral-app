@@ -1,23 +1,29 @@
 <div class="app-page" *ngIf="user$ | async as user">
-    <div class="wrapper__image">
-        <app-user-photo [photoURL]="user.photoURL"></app-user-photo>
+    <div class="app-page__image">
+        <div class="app-page__image_img">
+            <app-user-photo [photoURL]="user.photoURL"></app-user-photo>
+        </div>
+        <div class="app-page__image_text">
+            <p class="app-page__image_text_name">{{user.name}}</p>
+            <p class="text-same">{{user.email}}</p>
+        </div>
     </div>
-    <div class="app-page__content">
-        <p>Name: {{user.name}}</p>
-        <p>Email: {{user.email}}</p>
-        <p>Country: {{user.country}}</p>
-        <p>About: {{user.about}}</p>
-        <p>Nin: {{user.nin}}</p>
+    <div class="app-page__content">        
+        <p class="text-same">Country: <span>{{user.country}}</span></p>
+        <p class="text-same">About: <span>{{user.about}}</span></p>
+        <p class="text-same">Nin: <span>{{user.nin}}</span></p>
 
         <ng-container [ngSwitch]="user.roleId">
-            <app-super *ngSwitchCase="'superAdmin'" [role]="user.role"></app-super>
-            <app-admin *ngSwitchCase="'admin'" [role]="user.role"></app-admin>
-            <app-voter *ngSwitchCase="'voter'" [role]="user.role"></app-voter>
+            <app-super class="text-same" *ngSwitchCase="'superAdmin'" [role]="user.role"></app-super>
+            <app-admin class="text-same" *ngSwitchCase="'admin'" [role]="user.role"></app-admin>
+            <app-voter class="text-same" *ngSwitchCase="'voter'" [role]="user.role"></app-voter>
         </ng-container>
 
     </div>
 
-    <div class="app-page__footer">
-        <a class="app-button"  routerLink="/dashboard/profile/edit">Edit</a>
+    <div class="app-page__footer" *ngIf="isOwnProfile$ | async">
+        <a class="app-button" routerLink="/dashboard/profile/edit">Edit</a>
     </div>
 </div>
+
+
