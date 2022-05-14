@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Candidate } from '../../store/electList';
-import * as fromCandidate from '../../store/electList'
+import * as fromElection from '../../../../store/elections'
+import { Election, Elections } from 'src/app/store/elections';
 
 @Component({
   selector: 'app-result',
@@ -11,13 +11,12 @@ import * as fromCandidate from '../../store/electList'
 })
 export class ResultComponent implements OnInit {
 
-  @Input() candidate: Candidate;
-  //Winner: string
+  @Input() election: Elections
 
   constructor(private store: Store) { }
 
   ngOnInit(): void {
-    this.store.dispatch(new fromCandidate.Read())
+    this.store.dispatch(new fromElection.Read())
   }
 
 

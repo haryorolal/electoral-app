@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Candidate } from 'src/app/pages/settings/candidates/store/list';
+import * as fromElection from '../../../../store/elections';
 import { Elections } from 'src/app/store/elections';
 
 
@@ -11,23 +13,13 @@ import { Elections } from 'src/app/store/elections';
 })
 export class ReportComponent implements OnInit {
 
-  @Input() candidate: Candidate
+  @Input() election: Elections
 
-  /*elections = {
-    id: 'ododsjfjv',
-    localGovernment: 'medie',
-    photoUrl: null,
-    count: 900000,
-    name: 'David Kent',
-    electionType: 'general',
-    party: 'DDP',
-    position: 'president',
-    state: 'Ogun'
-  }*/
-
-  constructor() { }
+ 
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
+    this.store.dispatch(new fromElection.Read())
   }
 
 }

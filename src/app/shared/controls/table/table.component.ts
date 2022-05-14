@@ -1,5 +1,7 @@
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { AfterViewInit, Component, EventEmitter, forwardRef, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ControlItemInterface, ItemInterface, Value } from '../../../models/frontend';
 export { ControlItemInterface, ItemInterface, Value } from '../../../models/frontend';
@@ -16,20 +18,40 @@ export { ControlItemInterface, ItemInterface, Value } from '../../../models/fron
     }
   ]
 })
-export class TableComponent implements OnInit, ControlValueAccessor {
+export class TableComponent implements OnInit, ControlValueAccessor, AfterViewInit {
 
-  @Input() public dataSource: MatTableDataSource<string[]>;
-  //public dataSources: MatTableDataSource<string[]>
-  displayedColumns: string[] = ['#', 'Photo', 'Name', 'Party', 'Position', 'VoteCount']
+  @Input() public dataSource: MatTableDataSource<ItemInterface>;
+  displayedColumns: string[] = ['#', 'photoUrl', 'name', 'position', 'count']
   @Output() changed = new EventEmitter<Value[]>();
 
   value: Value[]
   isDisabled: boolean;
 
-  constructor() { }
+  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
 
   ngOnInit(): void {
+    
   }
+
+  /** Announce the change in sort state for assistive technology. */
+  announceSortChange(sortState: Sort) {
+    // This example uses English messages. If your application supports
+    // multiple language, you would internationalize these strings.
+    // Furthermore, you can customize the message to add additional
+    // details about the values being sorted.
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
+  }
+
 
   private propagateChange: any = () => {};
    //private propagateTouched: any = () => {};
