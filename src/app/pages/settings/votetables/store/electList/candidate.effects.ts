@@ -4,7 +4,7 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { increment, serverTimestamp } from "firebase/firestore";
 import { map, of, from, catchError, switchMap, take } from "rxjs";
 import { extractDocumentChangeActionData } from "src/app/shared/utils/data";
-import { Candidate, CandidateCreateRequest } from "./candidate.model";
+import { CandidateResult, CandidateResultCreateRequest } from "./candidate.model";
 import * as fromCandidateAction from './candidate.actions';
 
 @Injectable()
@@ -14,55 +14,55 @@ export class CandidateEffect {
     read = createEffect(() => this.action.pipe(
         ofType(fromCandidateAction.Types.READ),
         switchMap(() => 
-            this.afs.collection('candidate', ref => ref.orderBy('createdAt')).snapshotChanges().pipe(
+            this.afs.collection('result', ref => ref.orderBy('createdAt')).snapshotChanges().pipe(
                 take(1),
                 map((changes)=> changes.map(x => extractDocumentChangeActionData(x))),
-                map((candidate: Candidate[]) => new fromCandidateAction.ReadSuccess(candidate)),
+                map((candidate: CandidateResult[]) => new fromCandidateAction.ReadSuccess(candidate)),
                 catchError(err => of(new fromCandidateAction.ReadError(err.message)))
             )
         )
     ))
 
-    /*create = createEffect(() => this.action.pipe(
+    create = createEffect(() => this.action.pipe(
         ofType(fromCandidateAction.Types.CREATE),
         map((action: fromCandidateAction.Create) => action.candidate),
-        map((candidate: CandidateCreateRequest) => ({
+        map((candidate: CandidateResultCreateRequest) => ({
             ...candidate,
             createdAt: serverTimestamp()
         })),
-        switchMap((request: CandidateCreateRequest) => 
-            from(this.afs.collection('candidate').add(request)).pipe(
+        switchMap((request: CandidateResultCreateRequest) => 
+            from(this.afs.collection('result').add(request)).pipe(
                 map(res => ({...request, id: res.id})),
-                map((candidate: Candidate) => new fromCandidateAction.CreateSuccess(candidate)),
+                map((candidate: CandidateResult) => new fromCandidateAction.CreateSuccess(candidate)),
                 catchError(err => of(new fromCandidateAction.CreateError(err.message)))
             )
         )
-    ))*/
+    ))
 
     update = createEffect(() => this.action.pipe(
         ofType(fromCandidateAction.Types.UPDATE),
         map((action: fromCandidateAction.Update) => action.candidate),
-        map((candidate: Candidate) => ({
+        map((candidate: CandidateResult) => ({
             ...candidate,
             updatedAt: serverTimestamp()
         })),
-        switchMap((candidate) => 
-            from(this.afs.collection('candidate').doc(candidate.id).set(candidate)).pipe(
-                map(() => this.afs.collection('candidate').doc(candidate.id).update({count: increment(1)} )),
+        switchMap((candidate) =>
+            from(this.afs.collection('result').doc(candidate.id).set(candidate)).pipe(
+                map(() => this.afs.collection('result').doc(candidate.id).update({count: increment(1)} )),
                 map(() => new fromCandidateAction.UpdateSuccess(candidate.id, candidate)),
                 catchError(err => of(new fromCandidateAction.UpdateError(err.message)))
             )
         )
     ))
 
-   /* delete = createEffect(() => this.action.pipe(
+    delete = createEffect(() => this.action.pipe(
         ofType(fromCandidateAction.Types.DELETE),
         map((action: fromCandidateAction.Delete) => action.id),
         switchMap(id => 
-            from(this.afs.collection('candidate').doc(id).delete()).pipe(
+            from(this.afs.collection('result').doc(id).delete()).pipe(
                 map(() => new fromCandidateAction.DeleteSuccess(id)),
                 catchError(err => of(new fromCandidateAction.DeleteError(err.message)))
             )
         )
-    ))*/
+    ))
 }

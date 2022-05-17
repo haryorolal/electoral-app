@@ -3,12 +3,11 @@ import { FieldValue } from "firebase/firestore";
 export interface ResultInterface {
     //id: string;
     name: string;
+    positions: string;
+    party: string;
     count: number;
-    user: string
-   /* electionId: string;
-    localgovernmentId: string;
-    partyId: string;
-    stateId: string;*/
+    isActive?:boolean;
+    date?: Date;
     createdAt: FieldValue
-    //updatedAt?: FieldValue;
+    updatedAt?: FieldValue;
 }

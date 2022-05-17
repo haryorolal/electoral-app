@@ -17,7 +17,7 @@ import { effects, reducers } from './store';
     CommonModule,
     GeneralRoutingModule,
     FormModule,
-    StoreModule.forFeature('GeneralElection', reducers),
+    StoreModule.forFeature('VoteElection', reducers),
     EffectsModule.forFeature(effects)
   ],
   //exports: [GeneralComponent]

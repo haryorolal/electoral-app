@@ -9,6 +9,7 @@ import { UserPhotoModule } from 'src/app/shared';
 import { SideNavComponent } from 'src/app/components/sidenav/sidenav.component';
 import { DemographyModule } from '../demography/demography.module';
 import { ReportsModule } from '../reports/reports.module';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ReportsModule } from '../reports/reports.module';
     //ReportsModule,
     SettingsModule,
     ProfileModule,
-    UserPhotoModule
+    UserPhotoModule,
+    MatMenuModule
   ]
 })
 export class DashboardModule { }

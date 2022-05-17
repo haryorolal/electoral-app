@@ -1,0 +1,22 @@
+<div class="app-page">
+    <form [formGroup]="form" novalidate autocomplete="off"  (ngSubmit)="onSubmit()">
+        <app-form-field label="Candidate" [required]="true" [control]="form.controls.name">
+            <app-select formControlName="name" [ItemInterface]="election?.candidate.itemInterfaces"></app-select>
+        </app-form-field>
+
+        <app-form-field label="Position" [required]="true" [control]="form.controls.positions">
+            <app-select formControlName="positions" [ItemInterface]="election?.positions.itemInterfaces"></app-select>
+        </app-form-field>
+
+        <app-form-field label="Party" [required]="true" [control]="form.controls.positions">
+            <app-select formControlName="party" [ItemInterface]="election?.parties.itemInterfaces"></app-select>
+        </app-form-field>
+    
+        <app-button type="submit">Save</app-button>
+    </form>
+</div>
+
+
+<code>
+    {{form.value | json}}
+</code>

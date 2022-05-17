@@ -5,23 +5,24 @@
         </app-form-field>
 
         <app-form-field label="Election Type" [required]="true" [control]="form.controls.electionType">
-            <app-select formControlName="electionType" [controlItemInterface]="election?.election.controlItemsInterface"></app-select>
+            <app-select formControlName="electionType" [ItemInterface]="election?.election.itemInterfaces"></app-select>
         </app-form-field>
 
         <app-form-field label="Local Government" [required]="true" [control]="form.controls.localGovernment">
-            <app-select formControlName="localGovernment" [controlItemInterface]="election?.localgovernment.controlItemsInterface"></app-select>
+            <app-select formControlName="localGovernment" [ItemInterface]="election?.localgovernment.itemInterfaces"></app-select>
         </app-form-field>
 
         <app-form-field label="Party" [required]="true" [control]="form.controls.party">
-            <app-select formControlName="party" [controlItemInterface]="election?.parties.controlItemsInterface"></app-select>
+            <app-select formControlName="party" [ItemInterface]="election?.parties.itemInterfaces"></app-select>
         </app-form-field>
 
         <app-form-field label="State" [required]="true" [control]="form.controls.state">
-            <app-select formControlName="state" [controlItemInterface]="election?.state.controlItemsInterface"></app-select>
+            <app-select formControlName="state" [ItemInterface]="election?.state.itemInterfaces"></app-select>
         </app-form-field>
 
         <app-form-field label="Position" [required]="true" [control]="form.controls.position">
-            <app-input formControlName="position" ></app-input>
+            <app-select formControlName="position" [ItemInterface]="election?.positions.itemInterfaces"></app-select>
+            <!--<app-input formControlName="position" ></app-input>-->
         </app-form-field>
 
 

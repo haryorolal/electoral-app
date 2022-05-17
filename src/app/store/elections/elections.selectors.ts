@@ -38,12 +38,22 @@ export const getParties = createSelector(
     (state) => state.parties
 )
 
-export const getCandidate = createSelector(
+export const getState = createSelector(
     getElectionList,
-    (state) => state.candidate
+    (state) => state.state
 )
 
 export const getResult = createSelector(
     getElectionList,
     (state) => state.result
+)
+
+export const getCandidate = createSelector(
+    getElectionList,
+    (state) => state.candidate
+)
+
+export const getPositions = createSelector(
+    getElectionList,
+    (state) => state.positions
 )

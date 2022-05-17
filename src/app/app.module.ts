@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 //Date
 import { MatNativeDateModule, MatDateFormats, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
+
 const APP_DATE_FORMATS: MatDateFormats = {
   parse: {
     dateInput: {day: 'numeric', month: 'numeric', year: 'numeric'},
@@ -63,7 +64,6 @@ import { reducers, effects} from './store';
     }),
     
     MatNativeDateModule,
-
     NotificationModule.forRoot(),
     
   ],

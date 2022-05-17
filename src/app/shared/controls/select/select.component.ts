@@ -1,8 +1,8 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-import { ControlItemInterface, Value } from '../../../models/frontend';
-export { ControlItemInterface, Value } from '../../../models/frontend';
+import { ControlItemInterface, ItemInterface, Value } from '../../../models/frontend';
+export { ControlItemInterface, ItemInterface, Value } from '../../../models/frontend';
 
 import { MatSelectChange } from '@angular/material/select';
 
@@ -20,11 +20,12 @@ import { MatSelectChange } from '@angular/material/select';
 })
 export class SelectComponent implements OnInit, ControlValueAccessor {
 
-  @Input() controlItemInterface: ControlItemInterface[];
+  @Input() ItemInterface: ItemInterface[];
   @Input() placeholder: string;
   @Output() changed = new EventEmitter<Value>();
 
-  value: Value;
+  value: string;
+  //value: Value;
   isDisabled: boolean;
 
   constructor() { }
@@ -36,7 +37,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   private propagateChange: any = () => {};
   private propagateTouched: any = () => {};
 
-  writeValue(value: Value): void {
+  writeValue(value: string): void {
     this.value = value;
   }
 

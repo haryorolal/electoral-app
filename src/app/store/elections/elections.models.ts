@@ -6,10 +6,12 @@ export interface Elections {
     constitution: Election;
     election: Election;
     localgovernment: Election;
-    parties: Election;
-    result: Election;
+    parties: Election;    
     state: Election;
+    result: Election;
     candidate: Election;
+    positions: Election;
+    
 }
 
 export interface Election {

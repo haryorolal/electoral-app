@@ -1,0 +1,10 @@
+<div class="app-page">
+    <h3 style="text-align: center;">Create New Position</h3>
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+        <app-form-field label="Name" [required]="true" [control]="form.controls.name">
+            <app-input formControlName="name"></app-input>
+        </app-form-field>
+    
+        <app-button class="app-a" type="submit">Save</app-button>
+    </form>
+</div>

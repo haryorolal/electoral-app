@@ -1,6 +1,11 @@
-<div class="results" *ngFor="let cand of election?.candidate.itemInterfaces">
+<div class="results" *ngFor="let cand of election?.result.itemInterfaces">
     <div class="results__content">
-        <div>Candidate: {{cand.name}}</div>
-        <div>Voted Count: {{cand.count}}</div>
+        <div>
+            <p>Candidate: <span style="color:rgb(138, 136, 134);">{{cand.name}}</span></p>
+            <p>Position: <span style="color:rgb(138, 136, 134);">{{cand.positions}}</span></p>
+        </div>
+        <div>
+            <p>Voted Count: <span style="color:violet">{{cand.count }}</span></p>
+        </div>
     </div>
 </div>

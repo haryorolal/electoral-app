@@ -1,19 +1,35 @@
 @import "src/styles/mixins";
 
 .wrapper{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    //justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    
     
     &__same{
-        @include card;
-        width: 100vw;
-        height: 150px;
-        margin: 20px;
-        padding: 10px;
-
         display: flex;
         justify-content: space-between;
-        line-height: 2vh;    
+        color: white;
+        background-image: url("../../../../../assets/images/election2.jpg") !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important; 
+        //backgroud
+
+        @include card;
+        margin: 20px;
+        padding: 10px;       
+        line-height: 2vh;  
+        
+        p{
+            font-size: 12px;
+        }
+        
+        span{
+            color: green;
+            //font-size: 12px;
+            font-weight: bold;
+        }
     }
 }
 

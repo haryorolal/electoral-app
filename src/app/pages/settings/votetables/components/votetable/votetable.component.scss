@@ -1,0 +1,12 @@
+@import "src/styles/mixins";
+
+.votetable{
+    @include card;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    &__content{
+        line-height: 0.5em;
+    }
+}

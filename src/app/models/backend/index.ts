@@ -7,3 +7,4 @@ export * from './user';
 export * from './code';
 export * from './state';
 export * from './candidate';
+export * from './voteTable';

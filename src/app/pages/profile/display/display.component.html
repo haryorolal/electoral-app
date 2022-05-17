@@ -14,8 +14,8 @@
         <p class="text-same">Nin: <span>{{user.nin}}</span></p>
 
         <ng-container [ngSwitch]="user.roleId">
-            <app-super class="text-same" *ngSwitchCase="'superAdmin'" [role]="user.role"></app-super>
-            <app-admin class="text-same" *ngSwitchCase="'admin'" [role]="user.role"></app-admin>
+            <app-super class="text-same" *ngSwitchCase="'superAdmin'" [role]="user.role" hidden></app-super>
+            <app-admin class="text-same" *ngSwitchCase="'admin'" [role]="user.role" hidden></app-admin>
             <app-voter class="text-same" *ngSwitchCase="'voter'" [role]="user.role"></app-voter>
         </ng-container>
 

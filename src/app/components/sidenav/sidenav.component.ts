@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { Router } from "@angular/router";
-import { UserInterface } from "../../store/user";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
+import { MatMenuTrigger} from "@angular/material/menu";
 
 @Component({
     selector: 'app-sidenav',
@@ -9,12 +8,12 @@ import { UserInterface } from "../../store/user";
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideNavComponent implements OnInit {
-
+    @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   
     constructor() {}
 
     ngOnInit(): void {
-        
+        this.trigger.openMenu()
     }
 
     

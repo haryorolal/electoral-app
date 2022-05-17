@@ -1,6 +1,6 @@
 import { ActionReducerMap, createFeatureSelector } from "@ngrx/store";
-import {CandidateEffect} from './electList/candidate.effects';
-import * as fromReducer from './electList/candidate.reducer';
+import {CandidateEffect} from './electResultList/candidate.effects';
+import * as fromReducer from './electResultList/candidate.reducer';
 
 export interface CandidateFormInterface {
     candidateListState: fromReducer.CandidateListState
@@ -14,4 +14,4 @@ export const effects: any[] = [
     CandidateEffect
 ]
 
-export const getCandidateState = createFeatureSelector<CandidateFormInterface>('GeneralElection')
+export const getCandidateState = createFeatureSelector<CandidateFormInterface>('VoteElection')

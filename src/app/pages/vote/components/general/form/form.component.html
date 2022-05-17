@@ -1,19 +1,21 @@
-<div class="app-page">
-    <ng-container *ngIf="!isVoted">
+<div class="app-page" *ngIf="!isVoted">
+    <ng-container>
         <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
             <app-form-field label="Candidates" [required]="true" [control]="form.controls.id">
-                <app-radios formControlName="id" [controlItemInterface]="elections?.candidate.controlItemsInterface" ></app-radios>
+                <app-radios formControlName="id" [controlItemInterface]="elections?.result.controlItemsInterface" ></app-radios>
             </app-form-field>
     
             <div class="form__actions">
-                <app-button type="submit" >Vote</app-button>
+                <app-button type="submit">Vote</app-button>
             </div>
         </form>
     </ng-container>
+</div>
 
-    <ng-container *ngIf="isVoted">
-        <div>{{message}}</div>
-    </ng-container>
+<div class="app-page" *ngIf="isVoted">
+    <h1>Thank you for your vote!</h1>
+    <p>Having a fair vote is the goal</p>
+    <p>Please go ahead to monitor your candidate</p>
 </div>
 
 <!--<code>

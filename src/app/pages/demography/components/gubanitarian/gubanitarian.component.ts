@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Elections } from 'src/app/store/elections';
 
 @Component({
   selector: 'app-gubanitarian',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gubanitarian.component.scss']
 })
 export class GubanitarianComponent implements OnInit {
+
+  @Input() election: Elections;
 
   constructor() { }
 

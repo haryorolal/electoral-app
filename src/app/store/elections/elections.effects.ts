@@ -57,11 +57,7 @@ export class ElectionEffects {
                 this.afs.collection('Parties').snapshotChanges().pipe(
                     take(1),
                     map(items => items.map(x => documentToItem(x)))
-                ),
-                this.afs.collection('Result').snapshotChanges().pipe(
-                    take(1),
-                    map(items => items.map(x => documentToItem(x)))
-                ),                
+                ),             
                 this.afs.collection('state').snapshotChanges().pipe(
                     take(1),
                     map(items => items.map(x => documentToItem(x)))
@@ -69,17 +65,26 @@ export class ElectionEffects {
                 this.afs.collection('candidate').snapshotChanges().pipe(
                     take(1),
                     map(items => items.map(x => documentToItem(x)))
-                ),                
+                ),    
+                this.afs.collection('result').snapshotChanges().pipe(
+                    take(1),
+                    map(items => items.map(x => documentToItem(x)))
+                ),
+                this.afs.collection('votetable').snapshotChanges().pipe(
+                    take(1),
+                    map(items => items.map(x => documentToItem(x)))
+                )          
             ).pipe(
-                map(([constitution, election, localgovernment, parties, result, state, candidate]) => {
+                map(([constitution, election, localgovernment, parties, state, candidate, result, positions]) => {
                     const dictionary: Elections = {
                         constitution: addDictionary(constitution),
                         election: addDictionary(election),
                         localgovernment: addDictionary(localgovernment),
                         parties: addDictionary(parties),
-                        result: addDictionary(result),
                         state: addDictionary(state),
-                        candidate: addDictionary(candidate)
+                        candidate: addDictionary(candidate),
+                        result: addDictionary(result),
+                        positions: addDictionary(positions)
                     }
                     return new fromActions.ReadSuccess(dictionary)
                 }),

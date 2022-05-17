@@ -1,8 +1,34 @@
 <div class="sidenav"> 
-    <div class="sidenav-same demography" routerLink="demography" routerLinkActive="app-a_active">Dashboard</div>           
-    <div class="sidenav-same demography" [routerLink]="['vote']" routerLinkActive="app-a_active">Vote</div>
-    <div class="sidenav-same result" routerLink="results" routerLinkActive="app-a_active">MonitorVote</div>
-    <div class="sidenav-same report" routerLink="reports" routerLinkActive="app-a_active">Report</div>
-    <div class="sidenav-same settings" [routerLink]="['settings']" routerLinkActive="app-a_active">Features</div>
+    <div class="sidenav-same demography" routerLink="demography" routerLinkActive="app-a_active">
+        <span class="material-icons" aria-label="Dashboard">dashboard</span>
+        <span class="text-same">Dashboard</span>
+    </div>           
+
+    <div class="sidenav-same demography" [routerLink]="['vote']" routerLinkActive="app-a_active">
+        <span class="material-icons" aria-label="Vote">how_to_vote</span> 
+        <span class="text-same">Vote</span>
+    </div>
+    <div class="sidenav-same result" routerLink="results" routerLinkActive="app-a_active">
+        <span class="material-icons" aria-label="MonitorVote">monitor</span>
+        <span class="text-same">MonitorVote</span>
+    </div>
+    <div class="sidenav-same report" routerLink="reports" routerLinkActive="app-a_active">
+        <span class="material-icons" aria-label="Report">report</span> 
+        <span class="text-same">Report</span>
+    </div>
+    <div class="sidenav-same settings" routerLinkActive="app-a_active" [matMenuTriggerFor]="menu">
+        <span class="material-icons" aria-label="Features">featured_play_list</span> 
+        <span class="text-same">Features</span>        
+    </div>
+    <mat-menu #menu="matMenu">
+        <div mat-menu-item [routerLink]="['settings/constitutions']" routerLinkActive="app-a_active">Constitution</div>
+        <div mat-menu-item [routerLink]="['settings/elections']" routerLinkActive="app-a_active">ElectionType</div>
+        <div mat-menu-item [routerLink]="['settings/localgovernments']" routerLinkActive="app-a_active">Local Government</div>
+        <div mat-menu-item [routerLink]="['settings/partys']" routerLinkActive="app-a_active">Party</div>
+        <div mat-menu-item [routerLink]="['settings/states']" routerLinkActive="app-a_active">States</div>
+        <div mat-menu-item [routerLink]="['settings/positions']" routerLinkActive="app-a_active">Positions</div>
+        <div mat-menu-item [routerLink]="['settings/candidates']" routerLinkActive="app-a_active">Candidates</div>
+        <div mat-menu-item [routerLink]="['settings/votetable']" routerLinkActive="app-a_active">Vote Table</div>
+    </mat-menu>
     
 </div> 

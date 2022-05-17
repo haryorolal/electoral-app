@@ -21,7 +21,7 @@ export { ControlItemInterface, ItemInterface, Value } from '../../../models/fron
 export class TableComponent implements OnInit, ControlValueAccessor, AfterViewInit {
 
   @Input() public dataSource: MatTableDataSource<ItemInterface>;
-  displayedColumns: string[] = ['#', 'photoUrl', 'name', 'position', 'count']
+  displayedColumns: string[] = ['#', 'party', 'name', 'positions', 'count']
   @Output() changed = new EventEmitter<Value[]>();
 
   value: Value[]

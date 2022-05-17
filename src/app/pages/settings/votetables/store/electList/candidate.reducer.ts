@@ -1,10 +1,10 @@
-import { Candidate } from "./candidate.model";
+import { CandidateResult } from "./candidate.model";
 import * as fromActions from './candidate.actions';
 import { createEntityAdapter, EntityState } from "@ngrx/entity";
 
-export const listAdaptor = createEntityAdapter<Candidate>();
+export const listAdaptor = createEntityAdapter<CandidateResult>();
 
-export interface CandidateListState extends EntityState<Candidate>{
+export interface CandidateListState extends EntityState<CandidateResult>{
     loading: boolean;
     error: string;
 }
@@ -28,7 +28,7 @@ export function reducer(state = initialState, action: fromActions.All){
             return {...state, loading: null, error: action.error}
         }
 
-       /* case fromActions.Types.CREATE: {
+        case fromActions.Types.CREATE: {
             return {...state, loading: false, error: null}
         }
 
@@ -38,7 +38,7 @@ export function reducer(state = initialState, action: fromActions.All){
 
         case fromActions.Types.CREATE_ERROR: {
             return {...state, loading: null, error: action.error }
-        }*/
+        }
 
         case fromActions.Types.UPDATE: {
             return {...state, loading: true, error: null}
@@ -52,7 +52,7 @@ export function reducer(state = initialState, action: fromActions.All){
             return {...state, loading: null, error: action.error }
         }
 
-        /*case fromActions.Types.DELETE: {
+        case fromActions.Types.DELETE: {
             return {...state, loading: true, error: null}
         }
 
@@ -62,7 +62,7 @@ export function reducer(state = initialState, action: fromActions.All){
 
         case fromActions.Types.DELETE_ERROR: {
             return {...state, loading: null, error: action.error}
-        }*/
+        }
 
         default: {
             return state;

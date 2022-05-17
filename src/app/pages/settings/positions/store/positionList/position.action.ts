@@ -1,22 +1,22 @@
 import { Action } from "@ngrx/store";
-import { CandidateCreateRequest, Candidate } from "./candidate.model";
+import { PositionCreateRequest, Position } from "./position.model";
 
 export enum Types {
-    READ = '[Electoral][GeneralCandidate] Read: Start',
-    READ_SUCCESS = '[Electoral][GeneralCandidate] ReadSuccess: Success',
-    READ_ERROR = '[Electoral][GeneralCandidate] ReadError: Error',
+    READ = '[Electoral][Position] Read: Start',
+    READ_SUCCESS = '[Electoral][Position] Read: Success',
+    READ_ERROR = '[Electoral][Position] Read: Error',
 
-    /*CREATE = '[Electoral][Candidate] Create: Start',
-    CREATE_SUCCESS = '[Electoral][Candidate] CreateSuccess: Success',
-    CREATE_ERROR = '[Electoral][Candidate] CreateError: Error',*/
+    CREATE = '[Electoral][Position] Create: Start',
+    CREATE_SUCCESS = '[Electoral][Position] Create: Success',
+    CREATE_ERROR = '[Electoral][Position] Create: Error',
 
-    UPDATE = '[Electoral][GeneralCandidate] Update: Start',
-    UPDATE_SUCCESS = '[Electoral][GeneralCandidate] UpdateSuccess: Success',
-    UPDATE_ERROR = '[Electoral][GeneralCandidate] UpdateError: Error',
+    UPDATE = '[Electoral][Position] Update: Start',
+    UPDATE_SUCCESS = '[Electoral][Position] Update: Success',
+    UPDATE_ERROR = '[Electoral][Position] Update: Error',
 
-    /*DELETE = '[Electoral][Candidate] Delete: Start',
-    DELETE_SUCCESS = '[Electoral][Candidate] DeleteSuccess: Start',
-    DELETE_ERROR = '[Electoral][Candidate] DeleteError: Start'*/
+    DELETE = '[Electoral][Position] Start: Delete',
+    DELETE_SUCCESS = '[Electoral][Position] Delete: Success',
+    DELETE_ERROR = '[Electoral][Position] Delete: Error'
 }
 
 export class Read implements Action {
@@ -26,7 +26,7 @@ export class Read implements Action {
 
 export class ReadSuccess implements Action {
     readonly type = Types.READ_SUCCESS;
-    constructor(public candidate: Candidate[]){}
+    constructor(public positon: Position[]){}
 }
 
 export class ReadError implements Action {
@@ -34,29 +34,29 @@ export class ReadError implements Action {
     constructor(public error: string){}
 }
 
-/*export class Create implements Action {
+export class Create implements Action {
     readonly type = Types.CREATE;
-    constructor(public candidate: CandidateCreateRequest){}
+    constructor(public position: PositionCreateRequest){}
 }
 
 export class CreateSuccess implements Action {
     readonly type = Types.CREATE_SUCCESS;
-    constructor(public candidate: Candidate){}
+    constructor(public positon: Position){}
 }
 
 export class CreateError implements Action {
     readonly type = Types.CREATE_ERROR;
     constructor(public error: string){}
-}*/
+}
 
-export class Update implements Action{
+export class Update implements Action {
     readonly type = Types.UPDATE;
-    constructor(public candidate: Candidate){}
+    constructor(public position: Position){}
 }
 
 export class UpdateSuccess implements Action {
     readonly type = Types.UPDATE_SUCCESS;
-    constructor(public id: string, public changes: Partial<Candidate>){}
+    constructor(public id: string, public changes: Partial<Position>){}
 }
 
 export class UpdateError implements Action {
@@ -64,7 +64,7 @@ export class UpdateError implements Action {
     constructor(public error: string){}
 }
 
-/*export class Delete implements Action {
+export class Delete implements Action {
     readonly type = Types.DELETE;
     constructor(public id: string){}
 }
@@ -77,18 +77,19 @@ export class DeleteSuccess implements Action {
 export class DeleteError implements Action {
     readonly type = Types.DELETE_ERROR;
     constructor(public error: string){}
-}*/
+}
 
 export type All 
-= Read 
+= Read
 | ReadSuccess
 | ReadError
-/*| Create
+| Create
 | CreateSuccess
-| CreateError*/
+| CreateError
 | Update
 | UpdateSuccess
 | UpdateError
-/*| Delete
+| Delete
 | DeleteSuccess
-| DeleteError*/
+| DeleteError;
+

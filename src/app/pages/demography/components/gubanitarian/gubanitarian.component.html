@@ -1,15 +1,15 @@
-<div class="wrapper">
-    <div class="wrapper__president wrapper__same">
+<div class="wrapper" >
+    <div class="wrapper__president wrapper__same" *ngFor="let elect of election?.result.itemInterfaces">
         <div>
-            <p style="font-weight: 500;">Presidential</p>
-            <p>2 Parties</p>
-            <p>5 Candidates</p>
+            <p style="font-size: 15px; font-weight: bold; color: red;">{{elect.positions}}</p>
+            <p>Party: <span>{{elect.party}}</span></p>
+            <p>Candidate: <span>{{elect.name}}</span> </p>
         </div>
         <div>
-            <p>Ongoing</p>
+            <p style="color: rgb(167, 188, 250);">Ongoing</p>
         </div>
     </div>
-    <div class="wrapper__governor wrapper__same">
+    <!--<div class="wrapper__governor wrapper__same">
         <div>
             <p style="font-weight: 500;">Governor</p>
             <p>4 Parties</p>
@@ -34,7 +34,7 @@
         <div>
             <p>Ongoing</p>
         </div>
-    </div>
+    </div>-->
 </div>
 
 <div class="app-page">
