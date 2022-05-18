@@ -9,9 +9,7 @@ const route: Routes = [
     {path: 'registration', loadChildren: () => import('./component/registration/registration.module').then(x => x.RegistrationModule),
     canActivate: [UnauthGuard]
     },
-    {path: 'email-confirm', loadChildren: () => import('./component/email-confirm/email-confirm.module').then(x => x.EmailConfirmModule),
-    canActivate: [UnauthGuard]
-    },
+    {path: 'email-confirm', loadChildren: () => import('./component/email-confirm/email-confirm.module').then(x => x.EmailConfirmModule)},
     {path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];
 
