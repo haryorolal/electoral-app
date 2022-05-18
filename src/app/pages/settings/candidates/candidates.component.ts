@@ -27,7 +27,7 @@ export class CandidatesComponent implements OnInit {
     this.candidates$ = this.store.pipe(select(fromCandidate.selectAll))
     
     this.isEditable$ = this.store.pipe(select(fromUser.getRoleId),
-      map(roleId => ['superAdmin', 'admin'].includes(roleId))
+      map(roleId => ['superAdmin'].includes(roleId))
     )
   }
 

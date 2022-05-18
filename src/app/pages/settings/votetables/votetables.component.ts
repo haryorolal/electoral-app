@@ -24,7 +24,7 @@ export class VotetablesComponent implements OnInit {
     this.store.dispatch(new fromCandidate.Read());
     this.result$ = this.store.pipe(select(fromCandidate.selectAll));
     this.isEditable$ = this.store.pipe(select(fromUser.getRoleId),
-      map(roleId => ['superAdmin', 'admin'].includes(roleId))
+      map(roleId => ['superAdmin'].includes(roleId))
     )
   }
 
