@@ -1,7 +1,7 @@
 
 export interface AdminModelInterface {
     //parties: parties;
-    code: string
+    code: string;
 }
 /*export interface AdminElectionInterface {
     parties: parties;

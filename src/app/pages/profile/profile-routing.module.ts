@@ -4,9 +4,9 @@ import { AuthGuard } from 'src/app/guards';
 import { UserResolver } from './resolver';
 
 const routes: Routes = [
-    {path: 'new', loadChildren: () => import('./form/form.module').then(x => x.FormModule), canActivate: [AuthGuard]},
+    {path: 'new', loadChildren: () => import('./form/form.module').then(x => x.FormModule)},
     {path: 'edit', loadChildren: () => import('./form/form.module').then(x => x.FormModule),
-      resolve:{ user: UserResolver }, canActivate: [AuthGuard] },
+      resolve:{ user: UserResolver } },
     {path: ':id', loadChildren: () => import('./display/display.module').then(x => x.DisplayModule)}, 
 ];
 
