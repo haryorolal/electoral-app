@@ -5,7 +5,7 @@ import { SettingsComponent } from './settings.component';
 
 const routes: Routes = [  
   {path: '', component: SettingsComponent, children: [
-      {path:'constitutions', loadChildren: () => import('./constitutions/constitutions.module').then(x => x.ConstitutionsModule), canLoad: [AuthGuard, RoleGuard], data: {roles: [Roles.SuperAdmin]} },
+      {path:'constitutions', loadChildren: () => import('./constitutions/constitutions.module').then(x => x.ConstitutionsModule), canActivate: [AuthGuard] },
       {path: 'elections', loadChildren: () => import('./election/elections.module').then(x => x.ElectionsModule), canLoad: [AuthGuard, RoleGuard], data: {roles: [Roles.SuperAdmin, Roles.admin]} },
       {path: 'localgovernments', loadChildren: () => import('./locals/locals.module').then(x => x.LocalsModule), canLoad: [AuthGuard, RoleGuard], data: {roles: [Roles.SuperAdmin, Roles.admin]} },
       {path: 'partys', loadChildren: () => import('./partys/partys.module').then(x => x.PartysModule), canLoad: [AuthGuard, RoleGuard], data: {roles: [Roles.SuperAdmin, Roles.admin]} },

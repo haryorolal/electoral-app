@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header__title" routerLink="/">Electoral</div>
     <div class="header__navigation">
-        <div *ngIf="isAuthorized">
+        <div *ngIf="isAuthorized && isProfileCompleted$ | async">
             <a class="app-a" (click)="onProfileNavigate()">Profile</a>
             <a class="app-a" (click)="onSignout()">Sign Out</a>
         </div>        

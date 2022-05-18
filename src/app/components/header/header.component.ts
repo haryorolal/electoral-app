@@ -1,7 +1,10 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 import { UserInterface } from "../../store/user";
+import * as fromRoot from '../../store';
+import * as fromUser from '../../store/user';
+import { Store, select } from "@ngrx/store";
 
 @Component({
     selector: 'app-header',
@@ -14,10 +17,13 @@ export class HeaderComponent implements OnInit {
     @Input() user: UserInterface
     @Input() isAuthorized: boolean;
     @Output() signOut = new EventEmitter<void>();
+    isProfileCompleted$: Observable<boolean>
 
-    constructor(private router: Router) {}
+    constructor(private router: Router, private store: Store<fromRoot.State>) {}
 
-    ngOnInit(): void {        
+    ngOnInit(): void {      
+        this.isProfileCompleted$ = this.store.pipe(select(fromUser.getUser),
+        map(user => user && user.isCompleted === true ))  
     }
 
     onProfileNavigate(): void{
