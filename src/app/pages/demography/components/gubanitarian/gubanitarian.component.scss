@@ -20,11 +20,7 @@
         margin: 20px;
         padding: 10px;       
         line-height: 2vh;  
-        
-        p{
-            font-size: 12px;
-        }
-        
+                
         span{
             color: green;
             //font-size: 12px;
@@ -33,15 +29,34 @@
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 374px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        
+        &__same{
+            width: 100%;
+            height: 150px;
+            margin: 10px 1px 0 0;
+            font-size: 11px !important;
+        }
+    }
+
+    .app-page{
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 540px) {
     .wrapper{
         display: flex;
         flex-direction: column;
         
         &__same{
-            width: 50vw;
+            width: 100%;
             height: 150px;
-            padding: 10px;
+            margin: 12px 1px 0 0;
             font-size: 12px;
 
         }
@@ -56,18 +71,15 @@
     .wrapper{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 20px;
         
         &__same{
             width: 100%;
             height: 150px;
-            margin: 20px;
+            margin-left: 3px;
             line-height: 1vh;
 
         }
     }
 
-    .app-page{
-        margin-bottom: 50px;
-    }
+    
 }
