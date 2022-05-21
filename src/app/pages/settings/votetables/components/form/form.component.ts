@@ -52,7 +52,17 @@ export class FormComponent implements OnInit {
         updateOn: 'change', validators: [
           Validators.required
         ]
-      }]
+      }],
+      duration: [null, {
+        updateOn: 'change', validators: [
+          Validators.required
+        ]
+      }],
+      /*enddate: [null, {
+        updateOn: 'blur', validators: [
+          Validators.required
+        ]
+      }]*/
     });
     if(this.data.value){
       this.form.patchValue(this.data.value)

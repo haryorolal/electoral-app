@@ -3,38 +3,13 @@
         <div>
             <p style="font-size: 15px; font-weight: bold; color: red;">{{elect.positions}}</p>
             <p>Party: <span>{{elect.party}}</span></p>
-            <p>Candidate: <span>{{elect.name}}</span> </p>
+            <p>Candidate: <span>{{elect.name }}</span> </p>
+            <p>Date: <span>{{elect.duration.from | date:'fullDate'}}</span> </p>
         </div>
         <div>
             <p style="color: rgb(167, 188, 250);">Ongoing</p>
         </div>
-    </div>
-    <!--<div class="wrapper__governor wrapper__same">
-        <div>
-            <p style="font-weight: 500;">Governor</p>
-            <p>4 Parties</p>
-            <p>5 Candidates</p>
-        </div>
-        <div><p>Ongoing</p></div>
-    </div>
-    <div class="wrapper__local wrapper__same">
-        <div>
-            <p style="font-weight: 500;">Local Government</p>
-            <p>2 Parties</p>
-            <p>5 Candidates</p>
-        </div>
-        <div><p>Ongoing</p></div>
-    </div>
-    <div class="wrapper__senator wrapper__same">
-        <div>
-            <p style="font-weight: 500;">Senator</p>
-            <p>3 Parties</p>
-            <p>5 Candidates</p>
-        </div>
-        <div>
-            <p>Ongoing</p>
-        </div>
-    </div>-->
+    </div>    
 </div>
 
 <div class="app-page">

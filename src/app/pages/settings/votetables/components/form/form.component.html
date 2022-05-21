@@ -11,12 +11,14 @@
         <app-form-field label="Party" [required]="true" [control]="form.controls.positions">
             <app-select formControlName="party" [ItemInterface]="election?.parties.itemInterfaces"></app-select>
         </app-form-field>
+
+        <app-form-field label="Duration" [required]="true" [control]="form.controls.duration" >
+            <app-date-range formControlName="duration"></app-date-range>
+        </app-form-field>
     
-        <app-button type="submit">Save</app-button>
+        <div class="form__actions">
+            <app-button type="submit">Save</app-button>
+        </div>
     </form>
 </div>
 
-
-<code>
-    {{form.value | json}}
-</code>

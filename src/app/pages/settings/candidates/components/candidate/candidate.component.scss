@@ -6,3 +6,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 540px) {
+    .candidate{
+        padding: 5px;
+    }
+}

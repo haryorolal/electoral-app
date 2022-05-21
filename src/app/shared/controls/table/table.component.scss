@@ -1,8 +1,18 @@
-.table{
-    width: 100%;
+
+
+
+@media screen and (max-width: 375px) {
+
+    .mat-header-cell, .mat-cell{
+        padding: 10px;
+        font-size: 7px;        
+    }
 }
 
-th.mat-sort-header-sorted{
-    color: blue;
-}
+@media screen and (min-width: 375px) and (max-width: 540px) {
 
+    .mat-header-cell, .mat-cell{
+        padding: 12px;
+        font-size: 10px;
+    }
+}

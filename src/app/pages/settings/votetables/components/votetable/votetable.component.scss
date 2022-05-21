@@ -3,10 +3,22 @@
 .votetable{
     @include card;
     margin-bottom: 16px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
 
     &__content{
         line-height: 0.5em;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    .votetable{
+    
+        &__content{
+            line-height: 0.9em;
+            padding: 4px;
+        }
     }
 }

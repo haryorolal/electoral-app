@@ -31,7 +31,7 @@ export class VotetablesComponent implements OnInit {
   onAdd(): void{
     this.dialog.open(FormComponent, {
       width: '650px',
-      height: '300px',
+      height: '400px',
       data: {}
     })
   }
@@ -39,7 +39,7 @@ export class VotetablesComponent implements OnInit {
   onEdit(value: CandidateResult): void{
     this.dialog.open(FormComponent, {
       width: '650px',
-      height: '300px',
+      height: '400px',
       data: {value}
     })
   }

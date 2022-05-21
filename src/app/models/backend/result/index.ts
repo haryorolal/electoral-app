@@ -7,7 +7,8 @@ export interface ResultInterface {
     party: string;
     count: number;
     isActive?:boolean;
-    date?: Date;
-    createdAt: FieldValue
+    duration: Date
+    //enddate?: Date;
+    createdAt: FieldValue;
     updatedAt?: FieldValue;
 }

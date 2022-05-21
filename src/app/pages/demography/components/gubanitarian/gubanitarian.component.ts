@@ -9,10 +9,15 @@ import { Elections } from 'src/app/store/elections';
 export class GubanitarianComponent implements OnInit {
 
   @Input() election: Elections;
+  currentDate: Date
 
   constructor() { }
 
   ngOnInit(): void {
+    this.currentDate = new Date()
+    console.log(this.currentDate)
   }
+
+  
 
 }

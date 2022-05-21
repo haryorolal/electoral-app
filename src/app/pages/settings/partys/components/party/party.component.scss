@@ -6,3 +6,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 370px) {
+    .party{
+        padding: 4px;
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 540px) {
+    .party{
+        padding: 5px;
+    }
+}

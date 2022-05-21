@@ -7,3 +7,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 370px) {
+    .election{
+        padding: 4px;
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 540px) {
+    .election{
+        padding: 5px;
+    }
+}

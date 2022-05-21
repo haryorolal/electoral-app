@@ -1,0 +1,15 @@
+
+@media screen and (max-width: 370px) {
+    .app-page{
+        font-size: 10px;
+        padding: 5px !important;
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 540px) {
+    .app-page{
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+

@@ -3,7 +3,7 @@
         <p>Candidate: <span style="color:rgb(138, 136, 134);">{{item.name}}</span></p>
         <p>Party: <span style="color:rgb(138, 136, 134);">{{item.party}}</span></p>
         <p>Position: <span style="color:rgb(138, 136, 134);">{{item.positions}}</span></p>
-        
+        <!--<p>Duration: <span style="color:rgb(138, 136, 134);">{{item.duration}} </span></p>-->
     </div>
     <div class="votetable__actions" *ngIf="isEditable">
         <app-button (click)="onEdit(item)">Edit</app-button>
