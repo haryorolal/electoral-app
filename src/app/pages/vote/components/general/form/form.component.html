@@ -1,4 +1,5 @@
-<div class="app-page" *ngIf="!isVoted">
+<div class="app-page" *ngIf="!user.isVoted && (voteDate.duration.to | date: 'fullDate') === (currentDate | date: 'fullDate')">
+    
     <ng-container>
         <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
             <app-form-field label="Candidates" [required]="true" [control]="form.controls.id">
@@ -12,7 +13,7 @@
     </ng-container>
 </div>
 
-<div class="app-page" *ngIf="isVoted">
+<div class="app-page" *ngIf="user.isVoted">
     <h1>Thank you for your vote!</h1>
     <p>Having a fair vote is the goal</p>
     <p>Please go ahead to monitor your candidate</p>
@@ -20,4 +21,5 @@
 
 <!--<code>
     {{form.value | json}}
+    
 </code>-->

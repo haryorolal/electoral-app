@@ -22,6 +22,7 @@
     }
 
     &__center{       
+        padding-bottom: 20px;
 
         &-top{
             border-radius: 8px;
@@ -51,7 +52,7 @@
 
         &__center{
             width: 80%;
-            padding-bottom: 30px !important;
+            //padding-bottom: 30px !important;
         }
     }
 }

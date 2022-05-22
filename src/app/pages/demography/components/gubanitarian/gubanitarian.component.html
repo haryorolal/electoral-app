@@ -6,8 +6,11 @@
             <p>Candidate: <span>{{elect.name }}</span> </p>
             <p>Date: <span>{{elect.duration.from | date:'fullDate'}}</span> </p>
         </div>
-        <div>
-            <p style="color: rgb(167, 188, 250);">Ongoing</p>
+        <div *ngIf=" (elect.duration.to | date: 'fullDate') === (currentDate | date: 'fullDate') ">
+            <p style="color: rgb(167, 188, 250); font-size: 12px; font-weight: 600;">Ongoing</p>
+        </div>
+        <div *ngIf="(elect.duration.to | date: 'fullDate') !== (currentDate | date: 'fullDate') ">
+            <p style="color: rgb(167, 188, 250); font-size: 12px; font-weight: 600;">Upcoming</p>
         </div>
     </div>    
 </div>

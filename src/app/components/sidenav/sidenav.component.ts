@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from "@angular/core";
 import { MatMenuTrigger} from "@angular/material/menu";
 
 @Component({
@@ -13,7 +13,7 @@ export class SideNavComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        this.trigger.openMenu()
+        this.trigger.openMenu();
     }
 
     

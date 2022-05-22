@@ -15,6 +15,7 @@ export interface UserInterface {
     nin: number;
     phone?: number;
     code?: string;
+    isVoted?: boolean;
     isCompleted?: boolean;
     roleId: string;
     role: AdminModelInterface | SuperAdminInterface | VoterInterface;

@@ -4,6 +4,6 @@
     </div>
 
     <div class="app-page__content">
-        <app-form [elections]="election$ | async" [candidate]="candidates$ | async"></app-form>
+        <app-form [elections]="election$ | async" [candidate]="election.result.itemInterfaces" [duration]="election.result.itemInterfaces"></app-form>
     </div>
 </div>

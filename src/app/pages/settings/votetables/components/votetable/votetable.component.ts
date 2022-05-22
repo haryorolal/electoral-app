@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ResultInterface } from 'src/app/models/backend';
 import { CandidateResult } from '../../store/electList';
 
 @Component({
   selector: 'app-votetable',
   templateUrl: './votetable.component.html',
-  styleUrls: ['./votetable.component.scss']
+  styleUrls: ['./votetable.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VotetableComponent implements OnInit {
 
