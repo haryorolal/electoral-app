@@ -2,12 +2,25 @@
     margin-top: 0;
 }
 
-@media screen and (max-width: 540px) {
+
+@media screen and (max-width: 370px) {
     .app-page {
-        width: 100px;
+        width: 100%;
+
+        &__content{
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 540px) {
+    .app-page {
+        width: 100%;
 
         &__content{
             font-size: 10px;
         }
     }
 }
+
+
